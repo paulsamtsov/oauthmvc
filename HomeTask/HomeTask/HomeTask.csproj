@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

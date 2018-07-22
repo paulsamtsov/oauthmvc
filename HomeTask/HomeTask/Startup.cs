@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,13 +36,37 @@ namespace HomeTask
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddAuthentication(options =>
+            services.AddAuthentication()
+               .AddOAuth("matrix", options =>
+               {
+                   options.AuthorizationEndpoint = Configuration["Authentication:Authority"];
+                   options.ClientId = Configuration["Authentication:Audience"];
+                   options.CallbackPath = "/Home/GetToken";
+                   options.TokenEndpoint = "";
+               });
+
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //.AddCookie()
+            //.AddJwtBearer(options =>
             //{
-            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //})
-            //.Add
-            
+            //    options.Authority = Configuration["Authentication:Authority"];
+            //    options.Audience = Configuration["Authentication:Audience"];
+            //    options.Events = new JwtBearerEvents();
+            //    options.Events.OnTokenValidated = context =>
+            //    {
+            //        var accessToken = context.SecurityToken as JwtSecurityToken;
+            //        if (accessToken != null)
+            //        {
+            //            ClaimsIdentity identity = context.Principal.Identity as ClaimsIdentity;
+            //            if (identity != null)
+            //            {
+            //                identity.AddClaim(new Claim("access_token", accessToken.RawData));
+            //            }
+            //        }
+            //        return Task.CompletedTask;
+            //    };
+            //});
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
