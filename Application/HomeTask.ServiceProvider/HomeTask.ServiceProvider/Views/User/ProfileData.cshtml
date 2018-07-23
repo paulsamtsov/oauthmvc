@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "ProfileData";
+}
+
+<div>
+    <h2>Profile</h2>
+    <div id="profile">
+        <table class="table">
+            <tbody>
+                <tr class="row">
+                    <td class="col">
+                        <img src="@ViewBag.ProfileData.AvatarSasUrl" alt="Avatar" />
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Name:</td>
+                    <td class="col">@ViewBag.ProfileData.FirstName @ViewBag.ProfileData.LastName</td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Email:</td>
+                    <td class="col">@ViewBag.ProfileData.MailAddress</td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Phone:</td>
+                    <td class="col">@ViewBag.ProfileData.Phone</td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Roles:</td>
+                    <td class="col">
+                        <ul>
+                            @foreach (var role in ViewBag.ProfileData.Roles)
+                            {
+                                <li>@role</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <h2>Orders</h2>
+    <div id="orders">
+        @if (ViewBag.ProfileData.Orders.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th class="col">Id</th>
+                        <th class="col">Customer</th>
+                        <th class="col">Product</th>
+                        <th class="col">Count</th>
+                        <th class="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in ViewBag.ProfileData.Orders)
+                    {
+                        <tr class="row">
+                            <td class="col">@order.Id</td>
+                            <td class="col">@order.Customer</td>
+                            <td class="col">@order.Product</td>
+                            <td class="col">@order.Count</td>
+                            <td class="col">@order.Price</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h3 class="centred">There is no orders yet...</h3>
+        }
+    </div>
+</div>
+
