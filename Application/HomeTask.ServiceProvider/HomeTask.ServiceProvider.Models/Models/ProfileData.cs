@@ -12,5 +12,6 @@ namespace HomeTask.ServiceProvider.Models
         public string Phone { get; set; }
         public string AvatarSasUrl { get; set; }
         public List<string> Roles { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }

@@ -30,11 +30,16 @@ namespace HomeTask.ServiceProvider.Controllers
             else
             {
                 var token = await HttpContext.GetTokenAsync("Cookies", "access_token");
-                var httpClient = new ProfileDataClient(
+                var profileClient = new ProfileDataClient(
                     token,
                     _configuration.GetSection("ProfileUrl").Value);
-                var profileData = await httpClient.GetProfileDataAsync();
+                var OrdersClient = new OrdersDataClient(
+                    token,
+                    _configuration.GetSection("OrdersBaseUrl").Value);
+
+                var profileData = await profileClient.GetProfileDataAsync();
                 profileData.Roles = GetRolesFromUserContext(HttpContext.User.Identity as ClaimsIdentity);
+                profileData.Orders = (await OrdersClient.GetOrders()).ToList();
 
                 ViewBag.ProfileData = profileData;
 

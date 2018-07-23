@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask.ServiceProvider.BL", "HomeTask.ServiceProvider.BL\HomeTask.ServiceProvider.BL.csproj", "{C61BC5AF-F671-4888-9F5B-2BDCA4C8E437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeTask.ServiceProvider.BL", "HomeTask.ServiceProvider.BL\HomeTask.ServiceProvider.BL.csproj", "{C61BC5AF-F671-4888-9F5B-2BDCA4C8E437}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask.ServiceProvider.BL.Interfaces", "HomeTask.ServiceProvider.BL.Interfaces\HomeTask.ServiceProvider.BL.Interfaces.csproj", "{8E4FABAD-165B-495E-96BC-019EC09BD3E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeTask.ServiceProvider.BL.Interfaces", "HomeTask.ServiceProvider.BL.Interfaces\HomeTask.ServiceProvider.BL.Interfaces.csproj", "{8E4FABAD-165B-495E-96BC-019EC09BD3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask.ServiceProvider.Models", "HomeTask.ServiceProvider.Models\HomeTask.ServiceProvider.Models.csproj", "{97EC0F5D-0528-4EFF-B570-AD1B9D97318C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeTask.ServiceProvider.Models", "HomeTask.ServiceProvider.Models\HomeTask.ServiceProvider.Models.csproj", "{97EC0F5D-0528-4EFF-B570-AD1B9D97318C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask.ServiceProvider", "HomeTask.ServiceProvider\HomeTask.ServiceProvider.csproj", "{A53EDDE8-4762-411C-B4DE-CE965751FD28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeTask.ServiceProvider", "HomeTask.ServiceProvider\HomeTask.ServiceProvider.csproj", "{A53EDDE8-4762-411C-B4DE-CE965751FD28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask.EntityData.WebApi", "HomeTask.EntityData.WebApi\HomeTask.EntityData.WebApi.csproj", "{23965234-62D2-4565-9DCC-8376FC448578}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A53EDDE8-4762-411C-B4DE-CE965751FD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53EDDE8-4762-411C-B4DE-CE965751FD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53EDDE8-4762-411C-B4DE-CE965751FD28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23965234-62D2-4565-9DCC-8376FC448578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23965234-62D2-4565-9DCC-8376FC448578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23965234-62D2-4565-9DCC-8376FC448578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23965234-62D2-4565-9DCC-8376FC448578}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
