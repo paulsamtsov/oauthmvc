@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "ProfileData";
+}
+
+<h2>Profile</h2>
+<div>
+    <div id="profile">
+        <table class="table">
+            <tbody>
+                <tr class="row">
+                    <td class="col">
+                        <img src="@ViewBag.ProfileData.AvatarSasUrl" alt="Avatar" />
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Name:</td>
+                    <td class="col">@ViewBag.ProfileData.FirstName @ViewBag.ProfileData.LastName</td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Email:</td>
+                    <td class="col">@ViewBag.ProfileData.MailAddress</td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Phone:</td>
+                    <td class="col">@ViewBag.ProfileData.Phone</td>
+                </tr>
+                <tr class="row">
+                    <td class="col">Roles:</td>
+                    <td class="col">
+                        <ul>
+                            @foreach(var role in ViewBag.ProfileData.Roles)
+                            {
+                                <li>@role</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </div>
+    <div id="orders">
+
+    </div>
+</div>
+

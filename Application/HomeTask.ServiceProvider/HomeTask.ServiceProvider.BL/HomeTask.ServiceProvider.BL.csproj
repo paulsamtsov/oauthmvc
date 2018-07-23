@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HomeTask.ServiceProvider.BL.Interfaces\HomeTask.ServiceProvider.BL.Interfaces.csproj" />
+    <ProjectReference Include="..\HomeTask.ServiceProvider.Models\HomeTask.ServiceProvider.Models.csproj" />
+  </ItemGroup>
+
+</Project>
