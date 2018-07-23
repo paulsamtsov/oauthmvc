@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace HomeTask.ServiceProvider.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -46,7 +47,7 @@ namespace HomeTask.ServiceProvider.Controllers
                 return View("ProfileData");
             }
         }
-
+        
         [NonAction]
         private List<string> GetRolesFromUserContext(ClaimsIdentity identity)
         {
